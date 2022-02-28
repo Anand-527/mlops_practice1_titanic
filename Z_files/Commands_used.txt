@@ -74,3 +74,11 @@ git add -A
 git reset --soft HEAD
 git reset --hard HEAD(deleted local files)
 git checkout -b  devbranch
+git commit -a -m 'initial commit'
+git config --global user.email 'valabojuanandchary@gmail.com'
+git config --global user.name 'Anand-527'
+git commit -a -m 'initial commit'
+git push origin devbranch
+git merge devbranchgit 
+
+
