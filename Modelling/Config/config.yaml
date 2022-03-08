@@ -34,4 +34,4 @@ DROP:
   - ticket
   - boat
   - body
-  - home.dest
+  - home_dest

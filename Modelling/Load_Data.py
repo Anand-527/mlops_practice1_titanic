@@ -20,6 +20,10 @@ model_file_name = (
 
 def data() -> pd.DataFrame:
     data = pd.read_csv(data_file_path)
+    for i in data.columns:
+        if "." in i:
+            i_new = i.replace(".", "_")
+            data.rename(columns={i: i_new}, inplace=True)
     return data
 
 

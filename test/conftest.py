@@ -10,4 +10,10 @@ def sample_data():
     sample_file = Path.joinpath(cd.parent, "Datasets\\sample_data.csv")
     # importing dataframe
     data = pd.read_csv(sample_file)
+
+    for i in data.columns:
+        if "." in i:
+            i_new = i.replace(".", "_")
+            data.rename(columns={i: i_new}, inplace=True)
+
     return data
