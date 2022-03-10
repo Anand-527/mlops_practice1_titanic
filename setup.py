@@ -7,7 +7,7 @@ from setuptools import find_packages, setup
 
 # Package meta-data.
 NAME = 'titanic-twozerotwotwomar'
-DESCRIPTION = "Example regression model package from Train In Data."
+DESCRIPTION = "Example regression model package from Train In Data. use model_pack for import"
 URL = "https://github.com/Anand-527/mlops_practice1_titanic"
 EMAIL = "valabojuanandchary@gmail.com"
 AUTHOR = "Anand-527"
@@ -25,7 +25,7 @@ long_description = DESCRIPTION
 about = {}
 ROOT_DIR = Path(__file__).resolve().parent
 REQUIREMENTS_DIR = ROOT_DIR / 'Requirements'
-PACKAGE_DIR = ROOT_DIR / 'Modelling'
+PACKAGE_DIR = ROOT_DIR / 'model_pack'
 with open(PACKAGE_DIR / "VERSION") as f:
     _version = f.read().strip()
     about["__version__"] = _version
@@ -48,7 +48,7 @@ setup(
     python_requires=REQUIRES_PYTHON,
     url=URL,
     packages=find_packages(exclude=("tests",)),
-    package_data={"Modelling": ["VERSION"]},
+    package_data={"model_pack": ["VERSION"]},
     install_requires=list_reqs(),
     extras_require={},
     include_package_data=True,

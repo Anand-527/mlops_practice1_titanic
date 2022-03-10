@@ -5,9 +5,9 @@ include *.pkl
 include ./Datasets/data.csv
 include ./Datasets/sample_data.csv
 
-include ./Modelling/Config/config.yaml
-include ./Modelling/Trained_models/*.pkl
-include ./Modelling/Trained_models/VERSION
+include ./model_pack/Config/config.yaml
+include ./model_pack/Trained_models/*.pkl
+include ./model_pack/Trained_models/VERSION
 
 include ./Requirements/lint_requirements.txt
 include ./Requirements/requirements.txt

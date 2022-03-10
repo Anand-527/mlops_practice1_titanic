@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-import Modelling.Features as fea
-from Modelling.Config.config_validations import Config
+import model_pack.Features as fea
+from model_pack.Config.config_validations import Config
 
 
 @pytest.mark.fea_test

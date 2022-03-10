@@ -1,7 +1,7 @@
 Metadata-Version: 2.1
 Name: titanic-twozerotwotwomar
-Version: 0.0.1
-Summary: Example regression model package from Train In Data.
+Version: 0.0.3
+Summary: Example regression model package from Train In Data. use model_pack for import
 Home-page: https://github.com/Anand-527/mlops_practice1_titanic
 Author: Anand-527
 Author-email: valabojuanandchary@gmail.com
@@ -20,5 +20,5 @@ Requires-Python: >=3.6.0
 Description-Content-Type: text/markdown
 License-File: LICENSE
 
-Example regression model package from Train In Data.
+Example regression model package from Train In Data. use model_pack for import
 

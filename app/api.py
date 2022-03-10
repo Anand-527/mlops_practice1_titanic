@@ -1,7 +1,8 @@
 import pandas as pd
 from fastapi import FastAPI
-from Load_Data import load_model_pipeline
 from pydantic import BaseModel
+
+from model_pack.Load_Data import load_model_pipeline
 
 # from fastapi.encoders import jsonable_encoder
 # adding Folder_2 to the system path
@@ -10,6 +11,7 @@ from pydantic import BaseModel
 app = FastAPI()
 
 titanic_pipeline = load_model_pipeline()
+
 
 class input_data(BaseModel):
     pclass: int
