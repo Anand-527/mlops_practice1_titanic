@@ -13,6 +13,8 @@ include ./Requirements/lint_requirements.txt
 include ./Requirements/requirements.txt
 include ./Requirements/test_requirements.txt
 
+exclude ./app/*
+exclude ./test/*
 
 exclude *.log
 exclude *.cfg
