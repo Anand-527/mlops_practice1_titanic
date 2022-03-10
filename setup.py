@@ -6,9 +6,9 @@ from pathlib import Path
 from setuptools import find_packages, setup
 
 # Package meta-data.
-NAME = 'tid-regression-model'
+NAME = 'titanic-package'
 DESCRIPTION = "Example regression model package from Train In Data."
-URL = "https://github.com/Anand-527/mlops_practice1_titanic"
+URL = "https://github.com/Anand-527/mlops_practice1_titanic/tree/devbranch"
 EMAIL = "valabojuanandchary@gmail.com"
 AUTHOR = "Anand-527"
 REQUIRES_PYTHON = ">=3.6.0"
