@@ -53,7 +53,7 @@ def config_validate():
     return _config
 
 
-Config = config_validate()
+_config = config_validate()
 
 #
 #
@@ -62,6 +62,6 @@ Config = config_validate()
 
 if __name__ == "__main__":
     print(config_file_path)
-    print(Config.pipe_params)
+    print(_config.pipe_params)
     # print(Config.model_params)
     # print(cd)

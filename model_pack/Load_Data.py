@@ -2,7 +2,7 @@ from pathlib import Path
 
 import joblib
 import pandas as pd
-from Config.config_validations import Config
+from model_pack.Config.config_validations import _config
 from sklearn.pipeline import Pipeline
 
 cd = Path(__file__).parent
@@ -11,10 +11,12 @@ version_file_path = Path.joinpath(cd, "VERSION")
 with open(version_file_path) as file:
     ver = file.read()
 
+#path.parent.parent / ('new' + path.suffix)
+
 cd = Path(__file__).parent
-data_file_path = Path.joinpath(cd.parent, "Datasets\\data.csv")
-model_file_name = (
-    "Trained_models\\" + Config.model_params.Model_name + "_v" + str(ver) + ".pkl"
+data_file_path = Path.joinpath(cd.parent / "Datasets" , "data.csv")
+model_file_name = Path(
+    "Trained_models/" + _config.model_params.Model_name + "_v" + str(ver) + ".pkl"
 )
 
 
@@ -51,8 +53,8 @@ def remove_old_model_pipeline():
 
 if __name__ == "__main__":
     # print(remove_model_pipeline())
-    print(data().head(5))
-    # print(v)
+    #print(data().head(5))
+    print(model_file_name)
     # pass
 
 

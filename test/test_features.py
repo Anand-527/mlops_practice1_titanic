@@ -6,7 +6,7 @@ import pandas as pd
 import pytest
 
 import model_pack.Features as fea
-from model_pack.Config.config_validations import Config
+from model_pack.Config.config_validations import _config
 
 
 @pytest.mark.fea_test
@@ -30,12 +30,12 @@ def test_CovertingToFloat():
     sample_data = pd.read_csv("sample_data1.csv")
 
     feature_call = fea.CovertingToFloat(
-        variables=Config.pipe_params.NUMERICAL_VARIABLES
+        variables=_config.pipe_params.NUMERICAL_VARIABLES
     )
     feature_op = feature_call.fit_transform(sample_data)
 
     manual_op = sample_data.copy()
-    for i in Config.pipe_params.NUMERICAL_VARIABLES:
+    for i in _config.pipe_params.NUMERICAL_VARIABLES:
         manual_op[i] = manual_op[i].astype("float")
 
     difference_op = manual_op.compare(feature_op)
@@ -50,7 +50,7 @@ def test_CovertingToFloat():
 def test_SalutationExtraction():
     sample_data = pd.read_csv("sample_data2.csv")
 
-    feature_call = fea.SalutationExtraction(variables=Config.pipe_params.SALUTATION)
+    feature_call = fea.SalutationExtraction(variables=_config.pipe_params.SALUTATION)
     feature_op = feature_call.fit_transform(sample_data)
 
     manual_op = sample_data.copy()
@@ -68,7 +68,7 @@ def test_SalutationExtraction():
         else:
             return "Other"
 
-    manual_op["title"] = manual_op[Config.pipe_params.SALUTATION[0]].apply(get_title)
+    manual_op["title"] = manual_op[_config.pipe_params.SALUTATION[0]].apply(get_title)
 
     difference_op = manual_op.compare(feature_op)
 
@@ -81,11 +81,11 @@ def test_SalutationExtraction():
 @pytest.mark.fea_test
 def test_FeatureDropping():
     sample_data = pd.read_csv("sample_data3.csv")
-    feature_call = fea.FeatureDropping(variables=Config.pipe_params.DROP)
+    feature_call = fea.FeatureDropping(variables=_config.pipe_params.DROP)
     feature_op = feature_call.fit_transform(sample_data)
 
     manual_op = sample_data.copy()
-    manual_op.drop(labels=Config.pipe_params.DROP, axis=1, inplace=True)
+    manual_op.drop(labels=_config.pipe_params.DROP, axis=1, inplace=True)
 
     difference_op = manual_op.compare(feature_op)
 
@@ -98,7 +98,7 @@ def test_FeatureDropping():
 @pytest.mark.fea_test
 def test_ExtractLetterTransformer():
     sample_data = pd.read_csv("sample_data4.csv")
-    feature_call = fea.ExtractLetterTransformer(variables=Config.pipe_params.CABIN)
+    feature_call = fea.ExtractLetterTransformer(variables=_config.pipe_params.CABIN)
     feature_op = feature_call.fit_transform(sample_data)
 
     manual_op = sample_data.copy()
@@ -109,8 +109,8 @@ def test_ExtractLetterTransformer():
         except:
             return np.nan
 
-    manual_op[Config.pipe_params.CABIN[0]] = manual_op[
-        Config.pipe_params.CABIN[0]
+    manual_op[_config.pipe_params.CABIN[0]] = manual_op[
+        _config.pipe_params.CABIN[0]
     ].apply(get_first_cabin)
 
     difference_op = manual_op.compare(feature_op)

@@ -1,7 +1,7 @@
 # from Pipeline import titanic_pipe
-from Load_Data import load_model_pipeline
+from model_pack.Load_Data import load_model_pipeline
 from sklearn.metrics import accuracy_score, roc_auc_score
-from Train_Test_split import test_train
+from model_pack.Train_Test_split import test_train
 
 # python Train_Predict.py
 

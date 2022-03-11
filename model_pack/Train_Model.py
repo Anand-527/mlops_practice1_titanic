@@ -1,6 +1,6 @@
-from Load_Data import save_model_pipeline
-from Pipeline import titanic_pipe
-from Train_Test_split import test_train
+from model_pack.Load_Data import save_model_pipeline
+from model_pack.Pipeline import titanic_pipe
+from model_pack.Train_Test_split import test_train
 
 
 def build_model():

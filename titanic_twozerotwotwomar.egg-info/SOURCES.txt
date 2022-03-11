@@ -2,6 +2,8 @@ LICENSE
 MANIFEST.in
 README.md
 pyproject.toml
+requirements.txt
+runtime.txt
 setup.py
 Datasets/data.csv
 Datasets/sample_data.csv
@@ -19,7 +21,7 @@ model_pack/__init__.py
 model_pack/Config/__init__.py
 model_pack/Config/config.yaml
 model_pack/Config/config_validations.py
-model_pack/Trained_models/logistic_regression_v0.0.3.pkl
+model_pack/Trained_models/logistic_regression_v0.0.7.pkl
 titanic_twozerotwotwomar.egg-info/PKG-INFO
 titanic_twozerotwotwomar.egg-info/SOURCES.txt
 titanic_twozerotwotwomar.egg-info/dependency_links.txt
