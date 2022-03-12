@@ -5,35 +5,35 @@ pipeline {
     stages {
         stage('Create venv') {
             steps {
-                echo 'python3 -m venv venv'
-                echo 'source venv/bin/activate'
-                echo 'pip install --upgrade pip'
+                sh 'python3 -m venv venv'
+                sh 'source venv/bin/activate'
+                sh 'pip install --upgrade pip'
             }
         }
         stage('Install tox') {
             steps {
-                echo 'sudo pip install --upgrade pip'
-                echo 'pip install --user tox'
+                sh 'sudo pip install --upgrade pip'
+                sh 'pip install --user tox'
             }
         }
         stage('lint') {
             steps {
-                echo 'tox -e lint'
+                sh 'tox -e lint'
             }
         }
         stage('Feature Testing') {
             steps {
-                echo 'tox -e fea_test'
+                sh 'tox -e fea_test'
             }
         }
         stage('Training model') {
             steps {
-                echo 'tox -e train_model'
+                sh 'tox -e train_model'
             }
         }
         stage('Predicting model') {
             steps {
-                echo 'tox -e predict'
+                sh 'tox -e predict'
             }
         }
     }
